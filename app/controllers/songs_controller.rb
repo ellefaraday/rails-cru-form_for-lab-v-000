@@ -3,6 +3,10 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
+  def index
+    @songs = Song.all
+  end
+
   def create
     @song = Song.create!(song_params)
     redirect_to song_path(@song)
